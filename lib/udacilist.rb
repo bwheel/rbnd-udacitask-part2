@@ -14,6 +14,10 @@ class UdaciList
   end
   
   def delete(index)
+    if index > (@items.length - 1)
+      throw :IndexExceedsListSize
+    end
+    
     @items.delete_at(index - 1)
   end
   
