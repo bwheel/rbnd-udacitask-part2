@@ -2,7 +2,7 @@ class UdaciList
   attr_reader :title, :items
 
   def initialize(options={})
-    @title = options[:title]
+    @title = if options[:title] == nil then "" else options[:title] end
     @items = []
   end
   
