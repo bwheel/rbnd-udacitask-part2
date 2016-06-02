@@ -8,12 +8,14 @@ class UdaciList
   
   def add(type, description, options={})
     type = type.downcase
+    
+    #TODO: rework as some sort of switch/if else case.
     if type == "todo" || type == "event" || type == "link"
       @items.push TodoItem.new(description, options) if type == "todo"
       @items.push EventItem.new(description, options) if type == "event"
       @items.push LinkItem.new(description, options) if type == "link"
     else
-      raise udaciListErrors::InvalidItemType, "#{type} is an invalid list type."
+      raise UdaciListErrors::InvalidItemType, "#{type} is an invalid list type."
     end
   end
   
@@ -32,4 +34,9 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
+  
+  def filter(filter_type)
+    @items.select { |item| item.item_type == filter_type}
+  end
+  
 end

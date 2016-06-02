@@ -1,10 +1,11 @@
-class LinkItem
+class LinkItem < Item
   include Listable
-  attr_reader :description, :site_name
+  attr_reader :site_name
 
   def initialize(url, options={})
     @description = url
     @site_name = options[:site_name]
+    @item_type = "link"
   end
   
   def format_name
