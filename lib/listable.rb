@@ -2,7 +2,7 @@ module Listable
   def format_description(description)
     "#{description}".ljust(30)
   end
-  
+
   def format_date(date1, date2)
 
     if date2 == nil 
@@ -14,7 +14,7 @@ module Listable
       return dates
     end
   end 
-  
+
   def format_priority(priority)
     value = " ⇧" if priority == "high"
     value = " ⇨" if priority == "medium"
@@ -23,4 +23,7 @@ module Listable
     return value
   end
   
+  def format_type()
+    return "\ttype: #{item_type}"
+  end
 end

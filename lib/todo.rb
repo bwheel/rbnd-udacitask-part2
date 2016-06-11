@@ -19,6 +19,7 @@ class TodoItem < Item
   def details
     format_description(@description) + "due: " +
     format_date(@due, nil) +
-    format_priority(@priority)
+    format_priority(@priority) +
+    format_type()
   end
 end

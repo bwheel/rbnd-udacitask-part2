@@ -26,6 +26,12 @@ class UdaciList
     @items.delete_at(index - 1)
   end
   
+  def delete_multiple(items_to_remove)
+    items_to_remove.each do |item|
+      @items.delete(item)
+    end
+  end
+
   def all
 
     Formatador.display_line( "[blue]#{ "-" * @title.length}[/]")
@@ -37,7 +43,12 @@ class UdaciList
   end
   
   def filter(filter_type)
-    @items.select { |item| item.item_type == filter_type}
+    result = @items.select { |item| item.item_type == filter_type}
+    if result.length == 0
+      Formatador.display_line("[red]No events by #{filter_type} type[/]")
+    else
+      result
+    end
   end
   
 end
