@@ -27,11 +27,12 @@ class UdaciList
   end
   
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+
+    Formatador.display_line( "[blue]#{ "-" * @title.length}[/]")
+    Formatador.display_line( "[green]#{@title}[/]" )
+    Formatador.display_line( "[blue]#{"-" * @title.length}[/]" )
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      Formatador.display_line( "[yellow]#{position + 1})[/] #{item.details}")
     end
   end
   
