@@ -1,6 +1,7 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I added Formatador to format the lines to the command line.
 2. Describe the 2 features you added to the project.
   a) I put in functionality to delete multiple items
   b) I included the Formatador gem and used it to color the out put in the command line.
