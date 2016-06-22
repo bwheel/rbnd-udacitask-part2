@@ -2,12 +2,20 @@
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) I put in functionality to delete multiple items
+  b) I included the Formatador gem and used it to color the out put in the command line.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+I spent about a month, because I was out of town for a couple weeks and didn't work on it.
+
 2. What was the most rewarding challenge you conquered?
+It was cool to see how you can use modules instead of just inheritance.
+
 3. What two additional features did you build? Why?
+I added functionality to delete multiple ites, like an array and I used the Formatter gem
+to decorate the output.
+
 4. Where do you still have room to grow?
+I need practice.

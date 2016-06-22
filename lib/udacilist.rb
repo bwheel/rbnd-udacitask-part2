@@ -9,7 +9,6 @@ class UdaciList
   def add(type, description, options={})
     type = type.downcase
     
-    #TODO: rework as some sort of switch/if else case.
     if type == "todo" || type == "event" || type == "link"
       @items.push TodoItem.new(description, options) if type == "todo"
       @items.push EventItem.new(description, options) if type == "event"
