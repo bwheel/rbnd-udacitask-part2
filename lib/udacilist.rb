@@ -2,20 +2,20 @@ class UdaciList
   attr_reader :title, :items
 
   def initialize(options={})
-    @title = if options[:title] == nil then "" else options[:title] end
+    @title = if options[:title] == nil then "Untitled List" else options[:title] end
     @items = []
   end
   
   def add(type, description, options={})
     type = type.downcase
     
-    if type == "todo" || type == "event" || type == "link"
-      @items.push TodoItem.new(description, options) if type == "todo"
-      @items.push EventItem.new(description, options) if type == "event"
-      @items.push LinkItem.new(description, options) if type == "link"
+    allowed_types = { todo: TodoItem, link: LinkItem, event: EventItem }
+    if allowed_types.keys.include? type.to_sym
+      @items.push allowed_types[type.to_sym].new description, options
     else
-      raise UdaciListErrors::InvalidItemType, "#{type} is an invalid list type."
+      raise UdaciListErrors::InvalidItemType, "#{type} type doesn't exist"
     end
+
   end
   
   def delete(index)

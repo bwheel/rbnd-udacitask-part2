@@ -3,13 +3,13 @@ module Listable
     "#{description}".ljust(30)
   end
 
-  def format_date(date1, date2)
+  def format_date(start_date, end_date)
 
-    if date2 == nil 
-      date1 ? date1.strftime("%D") : "No due date"
+    if end_date == nil 
+      start_date ? start_date.strftime("%D") : "No due date"
     else
-      dates = date1.strftime("%D") if date1
-      dates << " -- " + date2.strftime("%D") if date2
+      dates = start_date.strftime("%D") if start_date
+      dates << " -- " + end_date.strftime("%D") if end_date
       dates = "N/A" if !dates
       return dates
     end
