@@ -44,11 +44,12 @@ new_list.add("link", "http://ruby-doc.org")
 # ---------------------
 new_list.all
 
-###### NEW FEATURE: Delete multiple items, uncomment to test.
-# test_list = [TodoItem.new("Buy more dog food", due: "in 5 weeks", priority: "medium"),
-# TodoItem.new("Go dancing", due: "in 2 hours")]
-# new_list.delete_multiple(test_list)
-# new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+###### NEW FEATURE: Delete multiple items, uncomment to test.
+test_list = [TodoItem.new("Buy more dog food", due: "in 5 weeks", priority: "medium"),
+TodoItem.new("Go dancing", due: "in 2 hours")]
+new_list.delete_multiple(test_list)
+new_list.all
